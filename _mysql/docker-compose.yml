@@ -1,0 +1,12 @@
+services:
+  
+  mysql:
+    image: mysql:8.0
+    container_name: explore-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: explore
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql
